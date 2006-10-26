@@ -1,5 +1,5 @@
 Package: affxparser
-Version: 1.6.0
+Version: 1.6.1
 Date: 2006-09-15
 Title: Affymetrix File Parsing SDK
 Author: Henrik Bengtsson, James Bullard, Kasper Daniel Hansen
@@ -11,3 +11,4 @@ Suggests: R.utils
 SaveImage: yes
 LazyLoad: yes
 biocViews: DataImport
+
