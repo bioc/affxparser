@@ -425,7 +425,7 @@ void CCDFFileData::Close()
 		m_bFileOpen = false;
 	}
 #else
-	if (m_fp == NULL)
+	if (m_fp != NULL)
 	{
 		if (m_bFileMapped == true)
 		{
