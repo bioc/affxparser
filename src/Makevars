@@ -74,5 +74,9 @@ SOURCES.package = \
 	R_affx_cdf_extras.cpp\
 	R_affx_bpmap_parser.cpp
 
-OBJS=$(SOURCES.fusion:.cpp=.o) $(SOURCES.package:.cpp=.o)
- 
+OBJECTS=$(SOURCES.fusion:.cpp=.o) $(SOURCES.package:.cpp=.o)
+
+all: myclean $(SHLIB)
+
+myclean:
+	rm -f $(OBJECTS)
