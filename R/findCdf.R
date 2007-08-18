@@ -61,6 +61,9 @@ findCdf <- function(chipType=NULL, paths=NULL, pattern="[.](c|C)(d|D)(f|F)$", ..
   # Validate arguments
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   # Argument 'paths':
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # Setup search path
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   if (is.null(paths)) {
     paths <- paste(".", 
                    "cdf/", "data/cdf/", 
@@ -71,14 +74,18 @@ findCdf <- function(chipType=NULL, paths=NULL, pattern="[.](c|C)(d|D)(f|F)$", ..
   paths <- c(".", paths);
   paths <- unique(paths);
 
-  # Argument 'chipType':
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # Setup search pattern
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   if (!is.null(chipType)) {
     if (regexpr("[.](c|C)(d|D)(f|F)$", chipType) !=-1)
       warning("Argument 'chipType' of findCdf() has suffix '.cdf':", chipType);
     pattern <- paste(chipType, pattern, sep="");
   }
 
-
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # Search
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   findFiles(pattern=pattern, paths=paths, ...);
 } 
 
