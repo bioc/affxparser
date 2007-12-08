@@ -13,7 +13,7 @@
     }
 
     if(length(unitLengths) != nUnits) {
-      stop("Number of elements in argument 'qcUnitLengths' does not match 'nUnits'");
+      stop("Number of elements in argument 'unitLengths' does not match 'nUnits'");
     }
 
     if(length(refSeq) != 1)
@@ -301,6 +301,9 @@
 
 ############################################################################
 # HISTORY:
+# 2007-11-13 /KH
+# o BUG FIX: The rrror message in internal .initializeCdf() would mention
+#   'qcUnitLengths' when it was meant to say 'unitLengths'.
 # 2007-07-13 /HB
 # o While writing unit names in .initializeCdf(), quite a few copies were 
 #   created using up a lot of memory.  By removing unused objects and
