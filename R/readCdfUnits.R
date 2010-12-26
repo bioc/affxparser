@@ -177,7 +177,7 @@ readCdfUnits <- function(filename, units=NULL, readXY=TRUE, readBases=TRUE, read
           stop("Number of PM and MM probes differ in probeset #", uu,
                                      ": ", length(pm), " != ", length(mm));
         }
-        pmmm <- .Internal(matrix(c(pm, mm), 2, npm, TRUE));
+        pmmm <- matrix(c(pm, mm), nrow=2L, ncol=npm, byrow=TRUE);
 #        dimnames(pmmm) <- dimnames;
 
         # Re-order cell elements according to PM/MM.

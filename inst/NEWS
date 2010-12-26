@@ -1,6 +1,9 @@
 Package: affxparser
 ===================
 
+Version: 1.22.1 [2010-12-26]
+o Converted .Internal(matrix) to use matrix().
+
 Version: 1.21.1 [2010-10-05]
 o Now readCdfDataFrame() also returns the cell field 'expos'.
 
