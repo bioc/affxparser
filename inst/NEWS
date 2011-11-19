@@ -1,6 +1,10 @@
 Package: affxparser
 ===================
 
+Version: 1.26.2 [2011-11-16]
+o The version number was bumped by Bioconductor to trigger a build.
+
+
 Version: 1.26.1 [2011-11-01]
 o FIX: Fixed warning on "In readBin(con, what = "integer", size = 4,
   n = 1, signed = FALSE, 'signed = FALSE' is only valid for integers
