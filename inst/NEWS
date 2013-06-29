@@ -1,6 +1,23 @@
 Package: affxparser
 ===================
 
+Version: 1.32.3 [2013-06-29]
+o BUG FIX: Since affxparser v1.30.2/1.31.2 (r72352; 2013-01-08), 
+  writeCdf() would incorrectly encode the unit types, iff the input 
+  'cdf' argument specified them as integers, e.g. as done by
+  writeCdf() for AffyGenePDInfo in aroma.affymetrix.  More
+  specifically, the unit type index would be off by one, e.g. an
+  'expression' unit (1) would be encoded as an 'unknown' unit (0)
+  and so on.  On the other  hand, if they were specified by their
+  unit-type names (e.g. 'expression') the encoding should still be
+  correct, e.g. if input is constructed from readCdf() of affxparser.
+  Thanks to Guido Hooiveld at Wageningen UR (The Netherlands) for
+  reporting on this.
+o BUG FIX: Similarily, writeCdf() has "always", at least affxparser
+  v1.7.4 since (r21888; 2007-01-09), encoded unit directions and
+  QC unit types incorrectly, iff they were specified as integers.
+
+
 Version: 1.32.2 [2013-05-25]
 o SPEEDUP: Removed all remaining gc() calls.
 o SPEEDUP: Replaced all rm() calls with NULL assignments.
